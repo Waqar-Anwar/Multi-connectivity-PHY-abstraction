@@ -30,7 +30,7 @@ pathdelay = [0 4 7 10]*1e-7;
 pathgains = [0 -10 -14 -18];
 
 % Maximum Doppler Shift (standard:10)
-maxDoppler = 100;
+maxDoppler = 2000;
 
 % Create Rayleigh fading channel
 rayChan = comm.RayleighChannel('SampleRate',1e7,'MaximumDopplerShift',maxDoppler,...
@@ -52,16 +52,21 @@ Sim_Para.SNR                = snr;
 Sim_Para.MaxNumError        = MaxNumError;
 Sim_Para.MaxPacketTx        = MaxPacketTx;
 Sim_Para.DataInd            = DataInd;
-Sim_Para.AWGN               = true; % Defines if just AWGN channel is used or Rayleigh
+Sim_Para.AWGN               = false; % Defines if just AWGN channel is used or Rayleigh
 Sim_Para.Rate               = r;
 Sim_Para.M                  = m;    % Modulation order
-Sim_Para.Waveform           = 'OFDM'; % {'SC-FDM', 'OFDM', 'GFDM','OTFS'}
 Sim_Para.NoPilots           = true;
 Sim_Para.RayleighChan       = rayChan;
 Sim_Para.ImperfectEq        = false;
+Sim_Para.diversity          = 'MRC'; % SC, EGC, MRC
+Sim_Para.n_link             =3;
 
+  
 
-
+if Sim_Para.AWGN 
 [PER_OFDM]        = LDPC_awgn_simulator(Sim_Para) 
+else
+[PER_OFDM]        = LDPC_multiconnectivity_simulator(Sim_Para) 
+end
 
 
