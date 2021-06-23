@@ -5,5 +5,7 @@ To simulate multi-connectivity performance same script "input_parameter_setting.
 
 In order to evalute performance using PHY abstraction, plese run "run_multiconnectivity_phy_asbstraction.m" with relavent parameters
 
-Channel relalizations are provided at "". These samples represent 10000 channels, 4 multi-connectivity links, 38 numbers of symbols and 64 number of the subcarriers: [64x38x4x10000].
+AWGN look-up tables are available in "AWGN_look_up_300_bytes.mat".
+
+Channel relalizations are provided at "https://www.dropbox.com/s/98lxwzqvzzoxp9l/channel_11p.mat?dl=0". These samples represent 10000 channels, 4 multi-connectivity links, 38 numbers of symbols and 64 number of the subcarriers: [64x38x4x10000].
  
