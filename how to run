@@ -3,4 +3,7 @@ This document explain the procedure for multi-connectivity performance evalution
 To plot AWGN curves for different MCSs, please use script "input_parameter_setting.m" with "Sim_Para.AWGN = true". Please don't forget to select the modulation, coding rate and packet size parameters
 To simulate multi-connectivity performance same script "input_parameter_setting.m" need to be run with "Sim_Para.AWGN = false". Please don't forget to select the number of links and link combining scheme.
 
+In order to evalute performance using PHY abstraction, plese run "run_multiconnectivity_phy_asbstraction.m" with relavent parameters
 
+Channel relalizations are provided at "". These samples represent 10000 channels, 4 multi-connectivity links, 38 numbers of symbols and 64 number of the subcarriers: [64x38x4x10000].
+ 
