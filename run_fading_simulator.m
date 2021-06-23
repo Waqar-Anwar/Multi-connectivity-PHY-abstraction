@@ -66,7 +66,7 @@ for i=1:length(sim.snr)
                 esnr_mrc_mcs1 = 10.*log10((alpha_ofdm.*beta_eesm/2).*(lambertw(exp(1).*(mean(exp(-snr_real./beta_eesm)./sqrt(((2.*snr_real)./beta_eesm) + 1),[1 2]).^(-2))) - 1));
                 loc_d = knnsearch(snr_awgn',esnr_mrc_mcs1(:));
                 per(i)=mean(per_awgn(loc_d));
-            elseif(sim.combining)
+            elseif(sim.combining == 3)
                 snr_real = sum((1/pn).*((abs(sim.channel)).^2),3);
                 var_mcs1_l4 = var(10*log10(snr_real),1,[1 2 3]);
                 alpha_ofdm = var_mcs1_l4*-0.0007 + 1.195;
