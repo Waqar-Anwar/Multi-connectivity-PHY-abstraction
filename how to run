@@ -1,4 +1,4 @@
-This document explain the procedure for multi-connectivity performance evalution with link combining schemes
+This document explain the procedure for multi-connectivity performance evalution with link combining schemes using PHY abstraction
 
 To plot AWGN curves for different MCSs, please use script "input_parameter_setting.m" with "Sim_Para.AWGN = true". Please don't forget to select the modulation, coding rate and packet size parameters
 To simulate multi-connectivity performance same script "input_parameter_setting.m" need to be run with "Sim_Para.AWGN = false". Please don't forget to select the number of links and link combining scheme.
